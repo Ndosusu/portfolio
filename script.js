@@ -1,5 +1,7 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
+const lightModeIcon = document.getElementById('light-mode-icon');
+const darkModeIcon = document.getElementById('dark-mode-icon');
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM entièrement chargé');
@@ -24,7 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const isLightMode = body.classList.contains('light-mode');
-    themeToggle.textContent = isLightMode ? 'Mode Sombre' : 'Mode Clair';
+
+    // Basculer les images de mode clair et sombre
+    if (isLightMode) {
+        lightModeIcon.classList.remove('hidden');
+        darkModeIcon.classList.add('hidden');
+    } else {
+        lightModeIcon.classList.add('hidden');
+        darkModeIcon.classList.remove('hidden');
+    }
 
     // Appliquer la classe light-mode aux autres éléments
     document.querySelectorAll('header, .project, .nav, #skills li, footer, button').forEach(el => {

@@ -52,6 +52,17 @@ button.light-mode {
     text-align: right;
 }
 
+button#theme-toggle.light-mode {
+    background: #ddd; /* Couleur de fond pour le mode clair */
+    color: #333; /* Couleur du texte pour le mode clair */
+    border: 1px solid #ccc; /* Optionnel : bordure pour le mode clair */
+}
+
+button#theme-toggle.light-mode:hover {
+    background: #bbb; /* Couleur au survol en mode clair */
+    color: #000; /* Couleur du texte au survol */
+}
+
 .nav.light-mode {
     background: #9e5d7b;
     color: #333;
@@ -107,6 +118,17 @@ header {
 
 #theme-toggle:hover {
     background: #555;
+}
+
+#theme-toggle img {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#theme-toggle img.hidden {
+    display: none;
 }
 
 h1 {
