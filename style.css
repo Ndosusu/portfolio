@@ -1,0 +1,735 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #1d0611, #2e0a1b);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+    color: #ccc;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Light Mode Styles */
+body.light-mode {
+    background: linear-gradient(120deg, #9e5d7b, #ffffff);
+    color: #333;
+}
+
+#nav.light-mode {
+    background: #9e5d7b;
+    color: #333;
+}
+
+.project.light-mode {
+    background: #fff;
+    color: #333;
+}
+
+#skills li.light-mode {
+    background: #ddd;
+    color: #333;
+}
+
+footer.light-mode {
+    background: #9e5d7b;
+    color: #333;
+}
+
+button.light-mode {
+    background: #ddd;
+    color: #333;
+    text-align: right;
+}
+
+/* Header */
+header {
+    width: 100%; /* Assure que le header prend toute la largeur */
+    position: fixed;
+    z-index: 10;
+    left: 0; /* S'assure que le header commence à gauche */
+    top: 0; /* S'assure que le header est en haut */
+    text-align: left;
+    justify-content: space-between; /* Ajoute un espace entre les éléments */
+}
+.nav {
+    background: #1a040e;
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 1;
+    align-items: center; /* Aligne verticalement les éléments */
+    box-sizing: border-box;
+}
+
+
+#theme-toggle {
+    position: absolute; /* Permet de positionner le bouton par rapport à son conteneur */
+    bottom: 20px; /* Ajuste la distance par rapport au haut de l'écran */
+    right: 10px; /* Ajuste la distance par rapport au bord droit de l'écran */
+    padding: 0.5rem 1rem;
+    background: #3f0f27;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 100; /* Assure que le bouton reste au-dessus des autres éléments */
+}
+
+#theme-toggle:hover {
+    background: #555;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 5%;
+    font-size: 2rem;
+    color: #fcc8e2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.sep{
+    align-items: flex-end;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(120deg, #631f40, #240614);
+    z-index: 100;
+}
+/* Sections */
+section {
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+}
+.about-skills-container {
+    display: flex;
+    justify-content: flex-start; /* Aligne les éléments au début */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    gap: 2rem; /* Ajoute un espace entre les sections */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    padding: 20px;
+    margin-top: 3%;
+}
+#about{
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 5rem;
+    width: 80%;
+    max-width: 600px;
+    flex: 1 1 45%; /* Prend 45% de la largeur disponible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex: 1 1 calc(30% - 1rem);
+    z-index: 1;
+    position: relative;
+    animation: waveEffect 10s infinite ease-in-out alternate;
+    overflow: hidden; /* Ensure the wave effect stays within bounds */
+    margin-left: 3%; /* Ajoute un espace à gauche */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+#about:hover::before {
+    opacity: 1;
+}
+
+.text-about {
+    text-align: left;
+    margin-left: 3%;
+    color: #acacac;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Skills Section */
+#skills{
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    width: 96%;
+    flex: 1 1 45%; /* Prend 45% de la largeur disponible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex: 1 1 calc(30% - 1rem);
+    z-index: 1;
+    position: relative;
+    overflow: hidden; /* Ensure the wave effect stays within bounds */
+
+}
+
+#skills ul {
+    display: flex;
+    overflow: hidden; /* Masque les éléments qui sortent du conteneur */
+    white-space: nowrap; /* Empêche les éléments de passer à la ligne */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem; /* Ajoute un espace entre les éléments */
+    animation: scrollSkills 180s linear infinite; /* Passez de 30s à 60s */
+    width: max-content; /* Ajuste la largeur pour inclure tous les éléments */
+}
+
+#skills li {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les icônes et le texte */
+    justify-content: flex-end; /* Centre verticalement */
+    background: #3f0f27;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    transition: transform 0.3s ease-in-out;
+    height: 180px; /* Fixe une hauteur uniforme */
+}
+
+#golang{
+    margin-top: 40%;
+    max-height: 60px; /* Augmente la hauteur maximale des icônes */
+}
+#js{
+    margin-top: 25%;
+    max-height: 100px; /* Augmente la hauteur maximale des icônes */
+}
+#java{
+    margin-top: 13%;
+    max-height: 120px; /* Augmente la hauteur maximale des icônes */
+}
+#html{
+    margin-top: 18%;
+    max-height: 120px; /* Augmente la hauteur maximale des icônes */
+}
+#css{
+    margin-top: 37%;
+    max-height: 80px; /* Augmente la hauteur maximale des icônes */
+}
+#sql{
+    margin-top: 40%;
+    max-height: 70px; /* Augmente la hauteur maximale des icônes */
+}
+#python{
+    margin-top: 30%;
+    max-height: 80px;
+}
+#rust{
+    margin-top: 30%;
+    max-height: 80px; /* Augmente la hauteur maximale des icônes */
+}
+#docker{
+    margin-top: 30%;
+    max-height: 90px; /* Augmente la hauteur maximale des icônes */
+}
+#sqlite{
+    margin-top: 30%;
+    max-height: 80px; /* Augmente la hauteur maximale des icônes */
+}
+#powerbi{
+    margin-top: 30%;
+    max-height: 80px; /* Augmente la hauteur maximale des icônes */
+}
+
+#skills li img {
+    width: auto; /* Maintient le ratio d'aspect */
+    margin-bottom: auto; /* Ajoute un espace entre l'icône et le texte */
+    object-fit: contain; /* Assure que l'image garde ses proportions */
+}
+
+
+
+#skills li:hover {
+    transform: scale(1.1);
+}
+
+/* Animation pour le défilement */
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Masquer les barres de défilement sur certains navigateurs */
+#skills ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* Projects Container */
+
+#projects {
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
+    margin-left: 3%;
+    margin-bottom: 5%;
+    width: 100%;
+    align-items: center;
+    max-width: 90%;
+    flex: 1 1 45%; /* Prend 45% de la largeur disponible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex: 1 1 calc(30% - 1rem);
+    z-index: 1;
+    position: relative;
+    animation: waveEffect 10s infinite ease-in-out alternate;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Projects */
+.project {
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex: 1 1 calc(30% - 1rem); /* Adjust width to fit three items per row */
+    z-index: 2;
+}
+
+.project:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.CV-Contact-container {
+    padding: 20px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+/* CV Section */
+#cv {
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    max-height: 120px;
+    width: 80%;
+    max-width: 500px;
+    flex: 1 1 45%; /* Prend 45% de la largeur disponible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex: 1 1 calc(30% - 1rem);
+    z-index: 1;
+    position: relative;
+    animation: waveEffect 10s infinite ease-in-out alternate;
+}
+
+/* Contact Form Section */
+#contact {
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 500px;
+    flex: 1 1 45%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    animation: waveEffect 10s infinite ease-in-out alternate;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+    color: #fcc8e2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    color: #fcc8e2;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    width: 80%;
+    max-width: 400px;
+}
+
+input, textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #3a0e23;
+    border-radius: 8px;
+    background: #3f0f27;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #fcc8e2;
+    box-shadow: 0 0 5px rgba(252, 200, 226, 0.5);
+}
+
+button {
+    background: #3f0f27;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s ease-in-out;
+    margin-top: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: #fcc8e2;
+    color: #3f0f27;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1a040e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    z-index: 1;
+    position: relative; /* Nécessaire pour que .cv-contact soit positionné par rapport au footer */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links a img:hover {
+    transform: scale(1.2);
+}
+
+.cv-contact {
+    position: absolute; /* Positionnement absolu pour placer les boutons */
+    top: 10px; /* Distance par rapport au haut du footer */
+    right: 10px; /* Distance par rapport au bord droit du footer */
+    display: flex;
+    gap: 1rem;
+}
+
+.cv-contact button {
+    background: #3f0f27;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s ease-in-out;
+}
+
+.cv-contact button:hover {
+    background: #fcc8e2;
+    color: #3f0f27;
+    transform: scale(1.1);
+}
+
+/* Contact Form */
+
+
+input, textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #3f0f27;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 2px;
+}
+
+ul li img {
+    width: 50px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Maintient le ratio d'aspect */
+}
+
+#animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+    background: transparent;
+    pointer-events: none; 
+}
+
+a {
+    color: #b93276;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #555;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3f0f27;
+    box-shadow: 0 0 5px rgba(63, 15, 39, 0.5);
+}
+
+#firstName {
+    color: #fcc8e2; /* Couleur pour le prénom */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#lastName {
+    color: #b93276; /* Couleur pour le nom de famille */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#custom-cursor {
+    position: fixed;
+    top: -7px;
+    left: -7px;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0);
+    border: 2px #b93276 solid;
+    border-radius: 50%;
+    pointer-events: none; /* Empêche les interactions avec le curseur */
+    transform: translate(-50%, -50%);
+    transition: transform 0.03s ease-out;
+    z-index: 9999;
+}
+
+#custom-little-cursor {
+    position: fixed;
+    top: -12px;
+    left: -12px;
+    width: 5px;
+    height: 5px;
+    background: #b93276;
+    border: 2px #b93276 solid;
+    border-radius: 50%;
+    pointer-events: none; /* Empêche les interactions avec le curseur */
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    z-index: 9999;
+}
+
+/* Keyframes for the wavy effect */
+@keyframes waveEffect {
+    0% {
+        border-top-left-radius:10% ;
+        border-top-right-radius:2%;
+        border-bottom-right-radius:2%;
+        border-bottom-left-radius:2% ;
+    }
+    25% {
+        border-top-left-radius:2% ;
+        border-top-right-radius:10%;
+        border-bottom-right-radius:2%;
+        border-bottom-left-radius:2% ;
+    }
+    50% {
+        border-top-left-radius:2% ;
+        border-top-right-radius:2%;
+        border-bottom-right-radius:10%;
+        border-bottom-left-radius:2% ;
+    }
+    75% {
+        border-top-left-radius:2% ;
+        border-top-right-radius:2%;
+        border-bottom-right-radius:2%;
+        border-bottom-left-radius:10% ;
+    }
+    100% {
+        border-top-left-radius:10% ;
+        border-top-right-radius:2%;
+        border-bottom-right-radius:2%;
+        border-bottom-left-radius:2% ;
+    }
+}
+
+/* CV Contact Box */
+#cv-contact-box {
+    border: #3a0e23 2px solid;
+    background: #3f0f273f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 300px;
+    position: relative;
+    text-align: center;
+    transition: height 0.3s ease-in-out;
+}
+
+
+
+
+#toggle-cv-contact {
+    margin-top: 1rem;
+    background: #3f0f27;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s ease-in-out;
+}
+
+#toggle-cv-contact:hover {
+    background: #fcc8e2;
+    color: #3f0f27;
+    transform: scale(1.1);
+}
+
+/* Pop-up de contact */
+#contact-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* fond semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#contact-popup.hidden {
+    display: none;
+}
+
+#contact-popup .popup-content {
+    text-align: center;
+}
+
+#contact-popup button {
+    margin-top: 1rem;
+}
+
+
+
+/* Contenu du pop-up */
+.popup-content {
+    border: #8b315da8 2px solid;
+    background: linear-gradient(145deg, #4a162eaf, #320b1f); /* Ajout d'un dégradé pour plus de profondeur */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3), 
+                inset 0px 4px 8px rgba(255, 255, 255, 0.1); /* Ombre externe et interne pour le relief */
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+/* Masquer le pop-up par défaut */
+.hidden {
+    display: none;
+}
+
+
+/* Fade-in Effect */
+.fade-in {
+    opacity: 0;
+    transform: translateX(-600px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.3s;
+}
