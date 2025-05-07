@@ -788,5 +788,9 @@ input:focus, textarea:focus {
         margin: 1rem auto; /* Centre les boutons */
     }
 
+    #custom-cursor,
+    #custom-little-cursor {
+        display: none; /* Cache les curseurs personnalisés */
+    }
 
 }
