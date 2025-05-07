@@ -42,7 +42,7 @@
         <li><img src="images/docker.png" alt="Docker" id="docker"><br>Docker</li>
         <li><img src="images/sqlite.png" alt="Sqlite" id="sqlite"><br>SQLite</li>
         <li><img src="images/power_BI.png" alt="PowerBI" id="powerbi"><br>Power BI</li>
-        <!-- Dupliquer les éléments pour un défilement fluide -->
+
         <li><img src="images/go.png" alt="Golang" id="golang"> <br> Golang</li>
         <li><img src="images/js.png" alt="Javascript" id="js"><br>JavaScript</li>
         <li><img src="images/java.png" alt="Java" id="java"><br>JAVA</li>
@@ -62,7 +62,7 @@
         <li><img src="images/css.png" alt="CSS" id="css"><br>CSS</li>
         <li><img src="images/sql.png" alt="SQL" id="sql"><br>SQL</li>
         <li><img src="images/python.png" alt="python" id="python"><br>Python</li>
-        <li><img src="images/rust.png" alt="rust" id="rust"><br>Rust</li>
+        <li><img src="images/rust2.svg" alt="rust" id="rust"><br>Rust</li>
         <li><img src="images/docker.png" alt="Docker" id="docker"><br>Docker</li>
         <li><img src="images/sqlite.png" alt="Sqlite" id="sqlite"><br>SQLite</li>
         <li><img src="images/power_BI.png" alt="PowerBI" id="powerbi"><br>Power BI</li>
@@ -102,6 +102,22 @@
     <div class="sep"></div>
     <div id="custom-cursor"></div>
     <div id="custom-little-cursor"></div>
+    <div id="contact-popup" class="hidden">
+        <div class="popup-content">
+            <h2>Contactez-moi</h2>
+            <p>Remplissez le formulaire ci-dessous pour me contacter.</p>
+            <form id="contact-form">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+            <button id="close-popup">Fermer</button> <!-- Bouton de fermeture -->
+        </div>
+    </div>
     <footer>
         <div class="footer-content">
             <p>Suivez-moi :</p>

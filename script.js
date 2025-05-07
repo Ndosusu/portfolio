@@ -27,7 +27,7 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = isLightMode ? 'Mode Sombre' : 'Mode Clair';
 
     // Appliquer la classe light-mode aux autres éléments
-    document.querySelectorAll('header, .project, #skills li, footer, button').forEach(el => {
+    document.querySelectorAll('header, .project, .nav, #skills li, footer, button').forEach(el => {
         el.classList.toggle('light-mode', isLightMode);
     });
 

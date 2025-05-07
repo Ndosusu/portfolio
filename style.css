@@ -52,6 +52,23 @@ button.light-mode {
     text-align: right;
 }
 
+.nav.light-mode {
+    background: #9e5d7b;
+    color: #333;
+}
+
+.nav.light-mode h1 span {
+    color: #333; /* Couleur du texte pour les noms */
+}
+
+.nav.light-mode #firstName {
+    color: #3f0f27;
+}
+
+.nav.light-mode #lastName {
+    color: #fcc8e2
+}
+
 /* Header */
 header {
     width: 100%; /* Assure que le header prend toute la largeur */
@@ -62,6 +79,9 @@ header {
     text-align: left;
     justify-content: space-between; /* Ajoute un espace entre les éléments */
 }
+
+
+
 .nav {
     background: #1a040e;
     color: white;
@@ -70,7 +90,6 @@ header {
     align-items: center; /* Aligne verticalement les éléments */
     box-sizing: border-box;
 }
-
 
 #theme-toggle {
     position: absolute; /* Permet de positionner le bouton par rapport à son conteneur */
