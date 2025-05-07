@@ -95,16 +95,29 @@
                 <h3>Project 2</h3>
                 <p>Description du projet.</p>
             </div>
-            <div class="project">
+            <div class="project" id="project-3">
                 <h3>Project 3</h3>
+                <img src="images/power_bi_naiss.png" alt="Aperçu du projet 3">
                 <p>Description du projet.</p>
+                <button id="project-popup-trigger">Voir les détails</button> <!-- Bouton pour ouvrir le pop-up -->
             </div>
         </div>
     </section>
 
+        <!-- Pop-up pour le projet 3 -->
+        <div id="project-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2>Project 3 Details</h2>
+                <img src="images/power_bi_naiss.png" alt="Détails du projet 3">
+                <p>Voici une description détaillée du projet 3, expliquant ses fonctionnalités, technologies utilisées, et objectifs.</p>
+                <button id="close-project-3-popup">Fermer</button> <!-- Assurez-vous que l'ID est correct -->
+            </div>
+        </div>
+
     <div class="sep"></div>
     <div id="custom-cursor"></div>
     <div id="custom-little-cursor"></div>
+    
     <div id="contact-popup" class="hidden">
         <div class="popup-content">
             <h2>Contactez-moi</h2>

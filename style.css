@@ -752,14 +752,12 @@ input:focus, textarea:focus {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3), 
                 inset 0px 4px 8px rgba(255, 255, 255, 0.1); /* Ombre externe et interne pour le relief */
     width: 90%;
-    max-width: 500px;
+    max-width: 900px;
     position: relative;
 }
 
 /* Masquer le pop-up par défaut */
-.hidden {
-    display: none;
-}
+
 
 
 /* Fade-in Effect */
@@ -773,6 +771,53 @@ input:focus, textarea:focus {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 1.3s;
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup .hidden {
+    display: none;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#close-project-3-popup {
+    background: #3f0f27;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#close-project-3-popup:hover {
+    background: #fcc8e2;
+    color: #3f0f27;
 }
 
 @media (max-width: 768px) {
@@ -815,4 +860,8 @@ input:focus, textarea:focus {
         display: none; /* Cache les curseurs personnalisés */
     }
 
+}
+
+.hidden {
+    display: none;
 }

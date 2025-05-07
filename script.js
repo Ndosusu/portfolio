@@ -83,6 +83,27 @@ window.addEventListener('click', (event) => {
     }
 });
 
+const projectPopupTrigger = document.getElementById('project-popup-trigger');
+const projectPopup = document.getElementById('project-popup');
+const projectPopupButton = document.getElementById('close-project-3-popup'); // Correction ici
+
+// Ouvrir le pop-up
+projectPopupTrigger.addEventListener('click', () => {
+    projectPopup.classList.remove('hidden');
+});
+
+// Fermer le pop-up
+projectPopupButton.addEventListener('click', () => { // Correction ici
+    projectPopup.classList.add('hidden');
+});
+
+// Fermer le pop-up en cliquant à l'extérieur
+window.addEventListener('click', (event) => {
+    if (event.target === contactPopup) {
+        contactPopup.classList.add('hidden');
+    }
+});
+
 const skillsList = document.querySelector('#skills ul');
 
 // Dupliquer les éléments pour un défilement fluide
