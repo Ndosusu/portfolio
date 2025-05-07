@@ -1,16 +1,17 @@
-// Initialisation d'EmailJS
-(function() {
-    emailjs.init("4_vhXh0ZbiQ1Sora9"); // Remplacez "YOUR_USER_ID" par votre ID utilisateur EmailJS
-})();
-
-// Gestionnaire d'événements pour le formulaire
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm('service_ain5zzc', 'template_ugyrbqk', this)
-        .then(function() {
-            alert('Message envoyé avec succès !');
-        }, function(error) {
-            alert('Échec de l\'envoi du message : ' + JSON.stringify(error));
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("4_vhXh0ZbiQ1Sora9"); // remplace par ta clé publique
+  
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+  
+      emailjs.sendForm('service_ain5zzc', 'template_ugyrbqk', this)
+        .then(() => {
+          alert('Message envoyé avec succès !');
+          form.reset();
+        }, (error) => {
+          alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
         });
-});
+    });
+  });
+  
