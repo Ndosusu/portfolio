@@ -743,7 +743,7 @@ input:focus, textarea:focus {
 /* Fade-in Effect */
 .fade-in {
     opacity: 0;
-    transform: translateX(-600px);
+    transform: translateX(-200px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -751,4 +751,42 @@ input:focus, textarea:focus {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 1.3s;
+}
+
+@media (max-width: 768px) {
+    .about-skills-container {
+        margin-top: 40%;
+        flex-direction: column; /* Change la direction pour les petits écrans */
+        align-items: center; /* Centre les éléments */
+    }
+
+    #about, #skills, #projects, #cv, #contact {
+        width: 90%; /* Ajuste la largeur pour les petits écrans */
+        margin: 1rem auto; /* Centre les sections */
+    }
+
+    .project {
+        width: 100%; /* Prend toute la largeur sur les petits écrans */
+        max-width: none; /* Enlève la largeur maximale */
+    }
+
+    #projects {
+        flex-direction: column; /* Change la direction pour les petits écrans */
+        align-items: center; /* Centre les éléments */
+    }
+    #theme-toggle {
+        position: static; /* Enlève la position fixe pour les petits écrans */
+        margin: 1rem auto; /* Centre le bouton */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Change la direction pour les petits écrans */
+        align-items: center; /* Centre les éléments */
+    }
+    .cv-contact {
+        position: static; /* Enlève la position fixe pour les petits écrans */
+        margin: 1rem auto; /* Centre les boutons */
+    }
+
+
 }
